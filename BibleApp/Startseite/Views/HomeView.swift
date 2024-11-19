@@ -14,13 +14,26 @@ struct HomeView: View {
             Color("AccentColor")
                 .ignoresSafeArea()
             
-           
+            
             VStack {
                 //Top Section
                 topSection
                 
+                Text("Tägliche Impulse".uppercased())
+                    .font(.caption)
+                    .foregroundStyle(.white.opacity(0.9))
+                    .opacity(0.8)
+                    .fontWeight(.heavy)
+                    .padding(.horizontal)
+                    .offset(x: -80)
                 
-           
+                StoryView()
+                    .padding(.top)
+                    .scaleEffect(0.9)
+                    
+                  
+                
+                
             }
         }
     }
@@ -36,11 +49,11 @@ var topSection: some View {
             //Segmented Control
             HStack {
                 Text("Heute")
-                    .font(.title2)
-                    .bold()
+                    .font(.headline)
+                    .fontWeight(.heavy)
                 
                 Text("Gemeinschaft")
-                    .font(.title3)
+                    .font(.subheadline)
                     .bold()
                     .foregroundStyle(.gray)
                     .overlay(alignment: .topTrailing) {
@@ -58,19 +71,23 @@ var topSection: some View {
                 HStack(spacing:0){
                     Image(systemName: "bolt")
                     Text("2")
-                        .fontWeight(.heavy)
                 }
+                .font(.caption)
                 
                 Image(systemName: "bell")
                     .bold()
+                    .font(.caption)
                 
                 Text("M")
+                    .font(.caption)
                     .overlay {
                         Circle()
                             .stroke(lineWidth: 2)
-                            .frame(width: 30, height: 30)
+                            .frame(width: 25, height: 25)
+                           
                         
                     }
+                    .padding(.trailing)
             }
             
             
